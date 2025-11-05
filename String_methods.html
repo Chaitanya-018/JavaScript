@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // ---------------------------------------------------------
+        // STRING METHODS - TASK (21-10-2025)
+        // ---------------------------------------------------------
+
+        let str = "JavaScript";
+        console.log(str.charAt(4));
+        // Output: S
+
+        console.log(str.charCodeAt(2));
+        // Output: 118
+
+        console.log(str.at(-1));
+        // Output: t
+
+
+
+        let str1 = "Hello";
+        let str2 = "World";
+
+        // Combine using concat()
+        let combined = str1.concat(str2);
+        console.log("Combined String:", combined);
+        // Output: Combined String: HelloWorld
+
+        // Check if combined includes 'lo'
+        console.log("Includes 'lo':", combined.includes("lo"));
+        // Output: true
+
+        // Find first index of 'l'
+        console.log("First index of 'l':", combined.indexOf("l"));
+        // Output: 2
+
+        // Find last index of 'l'
+        console.log("Last index of 'l':", combined.lastIndexOf("l"));
+        // Output: 3
+
+
+
+        let text = "   JavaScript Methods   ";
+
+        console.log("Original:", `"${text}"`);
+        // Output: "   JavaScript Methods   "
+
+        // Remove leading & trailing spaces
+        let trimmed = text.trim();
+        console.log("Trimmed:", `"${trimmed}"`);
+        // Output: "JavaScript Methods"
+
+        // Convert to uppercase
+        console.log("Uppercase:", trimmed.toUpperCase());
+        // Output: JAVASCRIPT METHODS
+
+        // Convert to lowercase
+        console.log("Lowercase:", trimmed.toLowerCase());
+        // Output: javascript methods
+
+        // Trim only from the start
+        console.log("TrimStart:", `"${text.trimStart()}"`);
+        // Output: "JavaScript Methods   "
+
+        // Trim only from the end
+        console.log("TrimEnd:", `"${text.trimEnd()}"`);
+        // Output: "   JavaScript Methods"
+
+
+
+        let str3 = "Learning JavaScript is fun!";
+
+        // Extract using slice()
+        let part1 = str3.slice(9, 19);
+        console.log("Using slice():", part1);
+        // Output: JavaScript
+
+        // Extract using substring()
+        let part2 = str3.substring(0, 8);
+        console.log("Using substring():", part2);
+        // Output: Learning
+
+
+
+        let numStr = "50";
+
+        // padStart() → adds characters at the beginning
+        let paddedStart = numStr.padStart(5, '0');
+        console.log("padStart(5, '0'):", paddedStart);
+        // Output: 00050
+
+        // padEnd() → adds characters at the end
+        let paddedEnd = numStr.padEnd(10, '*');
+        console.log("padEnd(10, '*'):", paddedEnd);
+        // Output: 50********
+
+
+
+        let sentence = "I love JavaScript, JavaScript is powerful!";
+
+        // Replace only the first occurrence
+        let replacedOnce = sentence.replace("JavaScript", "JS");
+        console.log("After replace():", replacedOnce);
+        // Output: I love JS, JavaScript is powerful!
+
+        // Replace all occurrences
+        let replacedAll = sentence.replaceAll("JavaScript", "JS");
+        console.log("After replaceAll():", replacedAll);
+        // Output: I love JS, JS is powerful!
+
+        // Compare two strings alphabetically
+        let compareResult = "apple".localeCompare("banana");
+        console.log("Compare 'apple' vs 'banana':", compareResult);
+        // Output: -1  (apple comes before banana)
+
+
+
+        // ---------------------------------------------------------
+        // STRING ANALYZER FUNCTION
+        // ---------------------------------------------------------
+
+        function analyzeString(str) {
+            return {
+                length: str.length,                        // total length including spaces
+                firstChar: str.charAt(0),                  // first character
+                lastChar: str.at(-1),                      // last character
+                upperCase: str.toUpperCase(),              // all uppercase
+                lowerCase: str.toLowerCase(),              // all lowercase
+                includesJS: str.includes("JS"),            // check if "JS" is present
+                sliced: str.slice(0, 5),                   // first 5 characters
+                trimmed: str.trim()                        // remove spaces at both ends
+            };
+        }
+
+        // Example usage
+        console.log(analyzeString("   JS is awesome!   "));
+        // Output:
+        // {
+        //   length: 20,
+        //   firstChar: " ",
+        //   lastChar: " ",
+        //   upperCase: "   JS IS AWESOME!   ",
+        //   lowerCase: "   js is awesome!   ",
+        //   includesJS: true,
+        //   sliced: "   JS",
+        //   trimmed: "JS is awesome!"
+        // }
+
+        // ---------------------------------------------------------
+        // END OF FILE
+        // ---------------------------------------------------------
+
+    </script>
+
+</body>
+
+</html>
