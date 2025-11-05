@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // --------------------------------------------------------
+        // 1. GLOBAL SCOPE
+        // Variables declared outside any function → accessible anywhere
+        // --------------------------------------------------------
+
+        var a = 86;  // global variable
+
+        function fun_name() {
+            console.log(a);      // ✅ accessible here
+            if (true) {
+                console.log(a);  // ✅ accessible inside block
+            }
+        }
+
+        console.log(a);  // ✅ accessible here
+        fun_name();
+
+        /*
+        OUTPUT:
+        86
+        86
+        86
+        */
+
+
+        // --------------------------------------------------------
+        // 2. LOCAL / FUNCTIONAL SCOPE
+        // Variables declared inside function → accessible ONLY inside that function
+        // --------------------------------------------------------
+
+        function add() {
+            var name = "Durgaprasad";
+            console.log(`The boy name is: ${name}`);
+
+            if (true) {
+                console.log(`The boy name is: ${name}`); // ✅ accessible inside block
+            }
+        }
+
+        add();
+
+        // console.log(name);  ❌ ERROR: name is not defined (local scope)
+
+        /*
+        OUTPUT:
+        The boy name is: Durgaprasad
+        The boy name is: Durgaprasad
+        */
+
+
+        // --------------------------------------------------------
+        // 3. BLOCK SCOPE (let, const)
+        // let/const can ONLY be accessed within the block {} they are declared in
+        // --------------------------------------------------------
+
+        // Using var (NOT block scoped)
+        function Number1() {
+            if (true) {
+                var city = "Hyderabad";
+                console.log(city);  // ✅
+            }
+            console.log(city);      // ✅ still accessible (var = function scoped)
+        }
+        Number1();
+
+        /*
+        OUTPUT:
+        Hyderabad
+        Hyderabad
+        */
+
+        // Using let (block scoped)
+        function Number2() {
+            if (true) {
+                let city = "Hyderabad";
+                console.log(city);  // ✅ accessible here
+            }
+            // console.log(city);  // ❌ ERROR: city is not defined (let block scoped)
+        }
+        Number2();
+
+        /*
+        OUTPUT:
+        Hyderabad
+        */
+
+
+        // --------------------------------------------------------
+        // 4. LEXICAL SCOPE
+        // Inner function can access variables of outer function
+        // --------------------------------------------------------
+
+        function Parent() {
+            var a = 96;
+            function Child() {
+                var b = 24;
+                console.log(a + b); // ✅ accessing parent variable
+            }
+            Child();
+        }
+        Parent();
+
+        /*
+        OUTPUT:
+        120
+        */
+
+
+        // --------------------------------------------------------
+        // 5. CLOSURES
+        // Inner function remembers variables even after outer function is returned
+        // --------------------------------------------------------
+
+        function Outer() {
+            var a = 10;
+
+            function inner() {
+                console.log(a);  // ✅ closure captures a
+            }
+
+            return inner;   // returning function, NOT calling
+        }
+
+        var result = Outer();
+        result();  // calling returned function
+
+        /*
+        OUTPUT:
+        10
+        */
+
+
+        // --------------------------------------------------------
+        // 6. TASK — sum_abc program
+        // (Just for reference — optional code)
+        // --------------------------------------------------------
+
+        function sum_abc(a, b, c) {
+            if (a == 13) {
+                return 0;
+            } else if (b == 13) {
+                return a;
+            } else if (c == 13) {
+                return a - b - c;
+            } else {
+                return a + b + c;
+            }
+        }
+
+        console.log(sum_abc(13, 5, 4));
+        console.log(sum_abc(5, 13, 5));
+        console.log(sum_abc(2, 6, 13));
+        console.log(sum_abc(2, 6, 5));
+
+        /*
+        OUTPUT:
+        0
+        5
+        -21
+        13
+        */
+
+    </script>
+
+
+</body>
+
+</html>
