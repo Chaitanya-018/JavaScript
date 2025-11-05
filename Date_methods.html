@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Object & Date Methods</title>
+</head>
+
+<body>
+    <script>
+        // --------------------------------------------------------
+        // 01-11-2025  -  DATE OBJECT
+        // --------------------------------------------------------
+
+        // Creating current date and time
+        var date = new Date();
+        console.log(date);
+        /*
+        Example OUTPUT:
+        2025-11-01T14:35:48.123Z
+        */
+
+        console.log(date.toString());
+        /*
+        Example OUTPUT:
+        Sat Nov 01 2025 20:05:48 GMT+0530 (India Standard Time)
+        */
+
+        console.log(date.toLocaleDateString());
+        /*
+        Example OUTPUT:
+        11/1/2025
+        */
+
+        console.log(date.toLocaleTimeString());
+        /*
+        Example OUTPUT:
+        8:05:48 PM
+        */
+
+        // Creating a custom date - (year, month, day, hour, minute, second)
+        // NOTE: Month index starts from 0 → (0 = Jan, 1 = Feb, ...)
+        var date1 = new Date(2026, 1, 12, 7, 24, 34);
+        console.log(date1.toString());
+        /*
+        OUTPUT:
+        Thu Feb 12 2026 07:24:34 GMT+0530 (India Standard Time)
+        */
+
+
+        // --------------------------------------------------------
+        // DATE SET METHODS (modify date values)
+        // --------------------------------------------------------
+
+        var date = new Date();
+
+        // setFullYear()
+        date.setFullYear(2028);
+        console.log(date.toString());
+        /*
+        Example OUTPUT:
+        Sun Nov 01 2028 20:05:48 GMT+0530 (India Standard Time)
+        */
+
+        // setMonth() → (0 = Jan, 7 = Aug)
+        date.setMonth(7);
+        console.log(date.toString());
+        /*
+        Example OUTPUT:
+        Tue Aug 01 2028 20:05:48 GMT+0530 (India Standard Time)
+        */
+
+        // setDate()
+        date.setDate(4);
+        console.log(date.toString());
+        /*
+        Example OUTPUT:
+        Fri Aug 04 2028 20:05:48 GMT+0530 (India Standard Time)
+        */
+
+        // setHours()
+        date.setHours(17);
+        console.log(date.toString());
+        /*
+        Example OUTPUT:
+        Fri Aug 04 2028 17:05:48 GMT+0530 (India Standard Time)
+        */
+
+        // setMinutes()
+        date.setMinutes(13);
+        console.log(date.toString());
+        /*
+        Example OUTPUT:
+        Fri Aug 04 2028 17:13:48 GMT+0530 (India Standard Time)
+        */
+
+        // setSeconds()
+        date.setSeconds(30);
+        console.log(date.toString());
+        /*
+        Example OUTPUT:
+        Fri Aug 04 2028 17:13:30 GMT+0530 (India Standard Time)
+        */
+
+
+    </script>
+
+</body>
+
+</html>
