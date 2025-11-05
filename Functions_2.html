@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+
+<body>
+    <script>
+        // ---------------------------------------------------------
+        // DATE: 23-10-2025
+        // FUNCTIONS & ARROW FUNCTIONS PRACTICE
+        // ---------------------------------------------------------
+
+
+        // ✅ 1. Function with return value
+        function fun_name() {
+            console.log("Hi, everyone, Have a good life..");   // displays message
+
+            var a = 10;
+            var b = 30;
+            var c = a + b;
+            console.log(c);                                     // 40
+
+            var d = a - b;
+            return d;                                           // returns -20
+        }
+
+        console.log(fun_name());
+        // Output:
+        // Hi, everyone, Have a good life..
+        // 40
+        // -20
+
+
+
+        // ✅ 2. Simple function with return
+        function getGreetings() {
+            return "Good morning";
+        }
+
+        console.log(getGreetings());
+        // Output:
+        // Good morning
+
+
+
+        // ✅ 3. Parameterized function returning multiple values
+        function add(a, b) {
+            return {
+                add: a + b,
+                sub: a - b,
+                mul: a * b
+            };
+        }
+
+        console.log(add(10, 5));
+        // Output:
+        // { add: 15, sub: 5, mul: 50 }
+
+
+
+        // ✅ 4. Area and perimeter of rectangle
+        function areaRec(length, breadth) {
+            return {
+                area: length * breadth,
+                perimeter: 2 * (length + breadth)
+            };
+        }
+
+        console.log(areaRec(10, 5));
+        // Output:
+        // { area: 50, perimeter: 30 }
+
+
+
+        // ---------------------------------------------------------
+        // ✅ ARROW FUNCTIONS
+        // ---------------------------------------------------------
+
+
+        // ✅ Normal arrow function
+        let student = () => console.log("Chaitu");
+        student();
+        // Output:
+        // Chaitu
+
+
+
+        // ✅ Parameterized arrow function
+        let sum = (x, y) => x + y;
+        console.log(sum(40, 20));
+        // Output:
+        // 60
+
+
+
+        // ✅ Arrow function with return
+        let sub = () => 10 - 2;
+        console.log(sub());
+        // Output:
+        // 8
+
+
+
+        // ✅ Arrow function returning an object
+        let mul = (x, y) => {
+            return {
+                multiplication: x * y
+            };
+        };
+
+        console.log(mul(10, 20));
+        // Output:
+        // { multiplication: 200 }
+
+
+
+        // ✅ Arrow function with log + return
+        var number = (name, age) => {
+            console.log("Name is " + name);  // Name is Dingi
+            return age;
+        };
+
+        console.log(number("Dingi", 22));
+        // Output:
+        // Name is Dingi
+        // 22
+
+
+
+        // ---------------------------------------------------------
+        // TASK — Display Employee details
+        // (Parameterized Arrow Function)
+        // ---------------------------------------------------------
+        const employee = (EId, EName, Ephno, EDoj, Exp) => {
+            console.log("Employee ID:", EId);
+            console.log("Employee Name:", EName);
+            console.log("Employee Phone:", Ephno);
+            console.log("Employee DOJ:", EDoj);
+            console.log("Employee EXP:", Exp);
+        };
+
+        employee(101, "Chaitu", 8008331645, "25-10-25", 2);
+        // Output:
+        // Employee ID: 101
+        // Employee Name: Chaitu
+        // Employee Phone: 8008331645
+        // Employee DOJ: 25-10-25
+        // Employee EXP: 2
+
+
+        // ---------------------------------------------------------
+        // END OF FILE
+        // ---------------------------------------------------------
+
+    </script>
+
+</body>
+
+</html>
