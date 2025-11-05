@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<body>
+
+    <div>
+        <!-- Using ID -->
+        <h1 id="one">Hi, Good Morning!!</h1>
+
+        <!-- Using Tag Name -->
+        <h3>Johhny Johnny</h3>
+        <h3>eating sugar</h3>
+        <h3>no papa</h3>
+        <button onclick="changeColorByTag()">Change H3 Colors</button>
+
+        <br><br>
+
+        <!-- Using Name -->
+        <p name="fast">Sundar said</p>
+        <h2 name="fast">hii to sundri</h2>
+        <p name="fast">sundri replied</p>
+        <h4 name="fast">with dinga</h4>
+        <button onclick="changeSizeByName()">Increase Font Size</button>
+
+        <br><br>
+
+        <!-- Using Class -->
+        <p class="slow">dingi went</p>
+        <h5 class="slow">to depression</h5>
+        <button onclick="changeStyleByClass()">Change Class Style</button>
+    </div>
+
+
+<script>
+
+    // ✅ getElementById()
+    var greet = document.getElementById("one");
+    greet.style.color = "blue";
+    greet.style.backgroundColor = "lightyellow";
+    greet.textContent = "Bye, Good Afternoon";
+
+    // ✅ getElementsByTagName()
+    var rhymes = document.getElementsByTagName("h3");
+    function changeColorByTag() {
+        for (let i = 0; i < rhymes.length; i++) {
+            rhymes[i].style.color = "red";
+        }
+    }
+
+    // ✅ getElementsByName()
+    var faster = document.getElementsByName("fast");
+    function changeSizeByName() {
+        for (let i = 0; i < faster.length; i++) {     // FIXED: removed <=
+            faster[i].style.fontSize = "40px";
+        }
+    }
+
+    // ✅ getElementsByClassName()
+    function changeStyleByClass() {
+        var slowElements = document.getElementsByClassName("slow");
+        slowElements[0].style.color = "purple";
+        slowElements[1].style.backgroundColor = "lightblue";
+    }
+
+</script>
+
+</body>
+</html>
