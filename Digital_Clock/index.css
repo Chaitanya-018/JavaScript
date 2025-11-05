@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* BRIGHT ANIMATED GRADIENT BACKGROUND */
+    background: linear-gradient(45deg, #ff006a, #ffae00, #00d9ff, #5b00ff);
+    background-size: 400% 400%;
+    animation: bgAnimation 10s infinite alternate ease-in-out;
+}
+
+/* Background animation */
+@keyframes bgAnimation {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Minimal frosted-glass container */
+.container {
+    padding: 40px 60px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    /* Subtle floating effect */
+    animation: float 3.5s infinite ease-in-out;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0px); }
+}
+
+#clock {
+    font-size: 70px;
+    color: black;
+    text-shadow: 0 0 8px #4aa8ff,
+                 0 0 20px rgba(74, 168, 255, 0.7);
+}
