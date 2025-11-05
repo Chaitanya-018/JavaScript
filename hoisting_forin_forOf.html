@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // --------------------------------------------------------
+        // 29-10-2025 | HOISTING
+        // --------------------------------------------------------
+
+        // ✅ var (hoisted with default value undefined)
+        console.log(food);
+        var food = "hi";
+
+        /*
+        OUTPUT:
+        undefined
+        */
+
+
+        // ✅ var (declared first, then assigned)
+        var fruit;
+        console.log(fruit);
+        fruit = "Mushroom Biryani";
+
+        /*
+        OUTPUT:
+        undefined
+        */
+
+
+        // ❌ let (hoisted but not initialized, gives ReferenceError)
+        /*
+        console.log(dish);
+        let dish = "Masala Dosa";
+        
+        OUTPUT:
+        ReferenceError: Cannot access 'dish' before initialization
+        */
+
+
+        // ❌ const (same as let but must be initialized during declaration)
+        /*
+        console.log(chocolate);
+        const chocolate = "5 star";
+        
+        OUTPUT:
+        ReferenceError: Cannot access 'chocolate' before initialization
+        */
+
+
+        // ❌ const must be declared and assigned at the same time
+        /*
+        const item;
+        console.log(item);
+        item = "KitKat";
+        
+        OUTPUT:
+        SyntaxError: Missing initializer in const declaration
+        */
+
+
+        // --------------------------------------------------------
+        // for...in  ➝ used to loop OBJECT KEYS/VALUES
+        // --------------------------------------------------------
+
+        var person = {
+            name: "Johnny",
+            age: 23,
+            place: "Warangal"
+        };
+
+        for (var key in person) {
+            console.log(`${key} : ${person[key]}`);
+        }
+
+        /*
+        OUTPUT:
+        name : Johnny
+        age : 23
+        place : Warangal
+        */
+
+
+        // --------------------------------------------------------
+        // for...of  ➝ used to loop ARRAYS / STRINGS
+        // --------------------------------------------------------
+
+        var colors = ["Red", "Blue", "Green"];
+
+        for (var col of colors) {
+            console.log(col);
+        }
+
+        /*
+        OUTPUT:
+        Red
+        Blue
+        Green
+        */
+
+
+        // for...of on string
+        var city = "Hyderabad";
+
+        for (var ch of city) {
+            console.log(ch);
+        }
+
+        /*
+        OUTPUT:
+        H
+        y
+        d
+        e
+        r
+        a
+        b
+        a
+        d
+        */
+
+    </script>
+</body>
+
+</html>
