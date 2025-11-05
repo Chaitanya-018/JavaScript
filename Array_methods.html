@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods</title>
+</head>
+
+<body>
+    <script>
+        // ---------------------------------------------------------
+        // JavaScript Arrays & Array Methods — Examples
+        // ---------------------------------------------------------
+
+        // ✅ 1. Updating values in an Array
+        var person = ["chaitu", 21, "vizag", true];
+        console.log(person);               // ["chaitu", 21, "vizag", true]
+
+        person[0] = "soma";
+        person[1] = 22;
+        person[2] = "hyd";
+        console.log(person);               // ["soma", 22, "hyd", true]
+        console.log(person[0]);            // "soma"
+
+
+        // ✅ 2. Creating array using Array constructor
+        var car = new Array();
+        car[0] = "BMW";
+        car[1] = "50 Lakhs";
+        car[2] = "Black";
+        console.log(car);
+
+
+        // ✅ 3. Basic Array Operations
+        var fruits = ["apple", "banana", "mango", "grapes", "orange", "apple"];
+        console.log(fruits);
+
+        // push() → add at end
+        fruits.push("Pineapple");
+        console.log(fruits);
+
+        // pop() → remove last item
+        console.log(fruits.pop());
+        console.log(fruits);
+
+        // unshift() → add at beginning
+        fruits.unshift("Kiwi fruit");
+        console.log(fruits);
+
+        // shift() → remove first element
+        fruits.shift();
+        console.log(fruits);
+
+
+        // ✅ Checking array values
+        console.log(fruits.length);          // total elements
+        console.log(fruits.includes("grapes"));
+        console.log(fruits.indexOf("banana"));
+        console.log(fruits.lastIndexOf("apple"));
+
+
+        // ✅ slice() → does not modify original array
+        console.log(fruits.slice(1, 4));     // from index 1 to 3
+
+
+        // ✅ splice() → modifies array
+        fruits.splice(1, 0, "strawberry", "dragonfruit", "watermelon");
+        console.log(fruits);
+
+        fruits.splice(1, 1, "strawberry", "dragonfruit", "watermelon");
+        console.log(fruits);
+
+
+        // ✅ concat()
+        var arr1 = ["bangalore", "hyderabad", "mumbai"];
+        var arr2 = ["pune", "vizag"];
+        console.log(arr1.concat(arr2));
+
+
+        // ✅ join() → convert array to string
+        console.log(arr1.join("-"));        // bangalore-hyderabad-mumbai
+
+        // ✅ toString()
+        console.log(arr1.toString());
+
+
+        // ✅ reverse()
+        var num = [1, 2, 3, 4, 5];
+        console.log(num.reverse());
+
+
+        // ✅ sort()
+        var num_1 = [1, 2, 4, 5, 3];
+        console.log(num_1.sort());
+
+
+        // ---------------------------------------------------------
+        // PRACTICE TASKS — ARRAY METHODS
+        // ---------------------------------------------------------
+
+        // 1. Print second and last color
+        const colors = ["Red", "Green", "Blue", "Yellow", "Purple"];
+        console.log(colors[1]);                      // Green
+        console.log(colors[colors.length - 1]);      // Purple
+
+
+        // 2. Replace first number with 100
+        let numbers = [10, 20, 30, 40, 50];
+        numbers[0] = 100;
+        console.log(numbers);
+
+
+        // 3. Mixed data types — print type of each element
+        let mix = ["Hello", 25, true];
+        for (let i = 0; i < mix.length; i++) {
+            console.log(`Element: ${mix[i]} , Type: ${typeof mix[i]}`);
+        }
+
+
+        // 4. Nested array — print inner array's second element
+        let nested = [[1, 2, 3], ["a", "b", "c"], [true, false]];
+        console.log(nested[1][1]);          // b
+
+
+        // 5. Create array using constructor & print length
+        let sampleFruits = new Array("Apple", "Banana", "Mango", "Orange");
+        console.log(sampleFruits.length);
+
+
+        // ---------------------------------------------------------
+        // push(), pop(), shift(), unshift()
+        // ---------------------------------------------------------
+
+        let favFruits = ["Apple", "Banana", "Mango"];
+
+        // 6. push()
+        favFruits.push("Orange");
+        console.log(favFruits);
+
+        // 7. pop()
+        favFruits.pop();
+        console.log(favFruits);
+
+        // 8. unshift()
+        favFruits.unshift("Pine Apple", "Grapes");
+        console.log(favFruits);
+
+        // 9. shift()
+        favFruits.shift();
+        console.log(favFruits);
+
+
+        // 10. Use push + pop to keep only 3 elements
+        favFruits.push("Kiwi");
+        while (favFruits.length > 3) {
+            favFruits.pop();
+        }
+        console.log(favFruits);
+
+
+        // ---------------------------------------------------------
+        // slice() & splice()
+        // ---------------------------------------------------------
+
+        // 11. slice()
+        let numbersList = [10, 20, 30, 40, 50];
+        console.log(numbersList.slice(1, 3));        // [20, 30]
+
+        // 12. splice() replace 30 with 35
+        numbersList.splice(2, 1, 35);
+        console.log(numbersList);
+
+        // 13. Insert 25 before 30
+        numbersList = [10, 20, 30, 40, 50];
+        numbersList.splice(2, 0, 25);
+        console.log(numbersList);
+
+        // 14. Remove last two elements using splice()
+        numbersList.splice(-2);
+        console.log(numbersList);
+
+        // 15. Copy first 3 elements using slice()
+        let newArr = numbersList.slice(0, 3);
+        console.log(newArr);
+
+    </script>
+
+</body>
+
+</html>
