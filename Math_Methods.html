@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math_Methods</title>
+</head>
+
+<body>
+    <script>
+        // --------------------------------------------------------
+        // MATH METHODS
+        // --------------------------------------------------------
+
+        // Math.abs() → converts negative to positive
+        var num = -12;
+        console.log(Math.abs(num));
+        /*
+        OUTPUT:
+        12
+        */
+
+        // Math.round() → rounds to nearest integer
+        // Math.ceil()  → rounds upward
+        // Math.floor() → rounds downward
+        var num1 = 24.243;
+        console.log(Math.round(num1));  // nearest integer
+        console.log(Math.ceil(num1));   // top value
+        console.log(Math.floor(num1));  // bottom value
+        /*
+        OUTPUT:
+        24
+        25
+        24
+        */
+
+
+        // --------------------------------------------------------
+        // NUMBER METHODS
+        // --------------------------------------------------------
+
+        // toFixed() → limits decimal points
+        var num2 = 5685.987645;
+        console.log(num2.toFixed(2));
+        console.log(num2.toFixed(4));
+        console.log(num2.toFixed(8));
+        console.log(num2.toFixed());
+        /*
+        OUTPUT:
+        5685.99
+        5685.9876
+        5685.98764500
+        5686
+        */
+
+        // typeof gives datatype
+        var num3 = "123456";
+        console.log(typeof (num3));
+        /*
+        OUTPUT:
+        string
+        */
+
+        // Number.parseInt() converts string → integer
+        var num4 = Number.parseInt(num3);
+        console.log(typeof (num4));
+        /*
+        OUTPUT:
+        number
+        */
+
+        // Number.parseFloat() converts string → decimal number
+        var nums = "17.987654";
+        console.log(typeof (nums));           // before conversion
+        console.log(Number.parseFloat(nums)); // converting to number
+        /*
+        OUTPUT:
+        string
+        17.987654
+        */
+
+    </script>
+
+</body>
+
+</html>
