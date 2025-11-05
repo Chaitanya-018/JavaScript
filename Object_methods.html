@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // ---------------------------------------------------------
+        // ✅ JavaScript Object Methods — Complete Examples
+        // ---------------------------------------------------------
+
+        // Base object for demonstration
+        const student = {
+            name: "Chaitanya",
+            age: 24,
+            course: "Full Stack",
+            marks: 90,
+        };
+
+
+        // ---------------------------------------------------------
+        // 1️⃣ Object.keys()  → returns only keys
+        // ---------------------------------------------------------
+        console.log("Object.keys:", Object.keys(student));
+        // Output: [ "name", "age", "course", "marks" ]
+
+
+        // ---------------------------------------------------------
+        // 2️⃣ Object.values() → returns only values
+        // ---------------------------------------------------------
+        console.log("Object.values:", Object.values(student));
+        // Output: [ "Chaitanya", 24, "Full Stack", 90 ]
+
+
+        // ---------------------------------------------------------
+        // 3️⃣ Object.entries() → returns key-value pairs in array format
+        // ---------------------------------------------------------
+        console.log("Object.entries:", Object.entries(student));
+        // Output: [ ["name","Chaitanya"], ["age",24], ["course","Full Stack"], ["marks",90] ]
+
+
+        // ---------------------------------------------------------
+        // 4️⃣ Object.assign() → merge objects
+        // ---------------------------------------------------------
+        const extraDetails = { city: "Vizag", rollNo: 101 };
+        const mergedObj = Object.assign({}, student, extraDetails);
+        console.log("Object.assign:", mergedObj);
+        // Output: { name:'Chaitanya',age:24,course:'Full Stack',marks:90,city:'Vizag',rollNo:101 }
+
+
+        // ---------------------------------------------------------
+        // 5️⃣ Object.hasOwnProperty() → checks if property exists
+        // ---------------------------------------------------------
+        console.log("Has 'course'? ", student.hasOwnProperty("course")); // true
+        console.log("Has 'address'? ", student.hasOwnProperty("address")); // false
+
+
+        // ---------------------------------------------------------
+        // 6️⃣ Object.freeze() → cannot add, delete, or modify
+        // ---------------------------------------------------------
+        const frozenObj = Object.freeze({ ...student });
+
+        console.log("Before freeze:", frozenObj);
+
+        // Trying modifications (❌ no effect)
+        frozenObj.name = "Changed";
+        frozenObj.address = "New Addr";
+        delete frozenObj.age;
+
+        console.log("After freeze:", frozenObj);
+        // Output remains unchanged
+
+
+        // ---------------------------------------------------------
+        // 7️⃣ Object.seal() → cannot add or delete, but can modify
+        // ---------------------------------------------------------
+        const sealedObj = Object.seal({ ...student });
+
+        console.log("Before seal:", sealedObj);
+
+        // Trying actions
+        sealedObj.age = 30;      // ✅ allowed
+        sealedObj.city = "Vizag"; // ❌ not allowed
+        delete sealedObj.name;    // ❌ not allowed
+
+        console.log("After seal:", sealedObj);
+
+
+        // ---------------------------------------------------------
+        // 8️⃣ Object.create() → creates object from prototype
+        // ---------------------------------------------------------
+        const baseObj = { price: "10rs" };
+        const newObj = Object.create(baseObj);
+
+        console.log("Object.create:", newObj.price);
+        // Output: 10rs
+
+
+        // ---------------------------------------------------------
+        // 9️⃣ Object.fromEntries() → Converts entries back to object
+        // ---------------------------------------------------------
+        const arr = [["brand", "BMW"], ["color", "Black"]];
+        console.log("Object.fromEntries:", Object.fromEntries(arr));
+        // Output: { brand: 'BMW', color: 'Black' }
+
+
+        // ---------------------------------------------------------
+        // 🔟 Object.getOwnPropertyNames() → returns keys including non-enumerable
+        // ---------------------------------------------------------
+        console.log("Object.getOwnPropertyNames:", Object.getOwnPropertyNames(student));
+        // Output: [ "name", "age", "course", "marks" ]
+
+
+        // ---------------------------------------------------------
+        // 1️⃣1️⃣ Object.defineProperty() → define/add custom properties
+        // ---------------------------------------------------------
+        const user = {};
+        Object.defineProperty(user, "username", {
+            value: "chaitu",
+            writable: false,
+        });
+        console.log("Object.defineProperty:", user.username);
+        // Output: chaitu (cannot edit)
+
+
+        // ---------------------------------------------------------
+        // 1️⃣2️⃣ Object.defineProperties() → multiple properties at once
+        // ---------------------------------------------------------
+        const person = {};
+        Object.defineProperties(person, {
+            name: { value: "Soma" },
+            id: { value: 123 },
+        });
+        console.log("Object.defineProperties:", person);
+        // Output: { name: "Soma", id: 123 }
+
+
+        // ---------------------------------------------------------
+        // ✅ END OF FILE
+        // ---------------------------------------------------------
+
+    </script>
+
+
+</body>
+
+</html>
