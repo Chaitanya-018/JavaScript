@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funtions_problems</title>
+
+</head>
+
+<body>
+    <script>
+        // ---------------------------------------------------------
+        // DATE: 22-10-2025
+        // FUNCTIONS PRACTICE
+        // ---------------------------------------------------------
+
+
+        // ✅ Function 1: Greet a user multiple times
+        function greetUser(name, times) {
+            if (times < 1) {
+                console.log("Warning: times should be at least 1");
+                return;
+            }
+
+            for (let i = 0; i < times; i++) {
+                console.log("Hello", name);
+            }
+        }
+
+        // Function calls
+        greetUser("Chaitu", 3);
+        // Output:
+        // Hello Chaitu
+        // Hello Chaitu
+        // Hello Chaitu
+
+        greetUser("Chaitu", 0);
+        // Output:
+        // Warning: times should be at least 1
+
+
+
+        // ✅ Function 2: Calculate Rectangle Area & Perimeter
+        function calcRectangle(width, height) {
+            if (width <= 0 || height <= 0) {
+                return "Error: Width and height must be positive numbers";
+            }
+
+            return {
+                area: width * height,
+                perimeter: 2 * (width + height)
+            };
+        }
+
+        // Function calls
+        console.log(calcRectangle(5, 10));
+        // Output:
+        // { area: 50, perimeter: 30 }
+
+        console.log(calcRectangle(-3, 10));
+        // Output:
+        // Error: Width and height must be positive numbers
+
+
+
+        // ✅ Function 3: Repeat a string multiple times using separator
+        function repeatString(str, count, separator = "") {
+            if (count < 1) return "";
+            return Array(count).fill(str).join(separator);
+        }
+
+        // Function calls
+        console.log(repeatString("ha", 3, "-"));
+        // Output:
+        // ha-ha-ha
+
+        console.log(repeatString("ha", 3));
+        // Output:
+        // hahaha
+
+
+        // ---------------------------------------------------------
+        // END OF FILE
+        // ---------------------------------------------------------
+
+    </script>
+
+</body>
+
+</html>
