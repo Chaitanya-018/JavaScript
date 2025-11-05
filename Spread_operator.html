@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread Operator</title>
+</head>
+
+<body>
+    <script>
+        // ---------------------------------------------------------
+        // SPREAD OPERATOR (Array)
+        // ---------------------------------------------------------
+
+        var food = ["idly", 40, "white", true];
+        console.log(food);
+        // Output: ["idly", 40, "white", true]
+
+        console.log(...food);
+        // Output: idly 40 white true
+
+
+        var food1 = [...food];   // Copy array using spread operator
+        console.log(food1);
+        // Output: ["idly", 40, "white", true]
+
+
+        // ---------------------------------------------------------
+        // SPREAD OPERATOR (Object)
+        // ---------------------------------------------------------
+
+        var obj1 = { name: "megha", age: 99, place: "Hyderabad" };
+        console.log(obj1);
+        // Output: { name: "megha", age: 99, place: "Hyderabad" }
+
+        var obj2 = { obj1 }; // Nested object
+        console.log(obj2);
+        // Output: { obj1: { name: "megha", age: 99, place: "Hyderabad" } }
+
+
+        // ---------------------------------------------------------
+        // ARRAY DESTRUCTURING
+        // ---------------------------------------------------------
+
+        var food = ["idly", 40, "white", true];
+
+        var foodname = food[0];
+        console.log(foodname);
+        // Output: idly
+
+        var price = food[1];
+        console.log(price);
+        // Output: 40
+
+
+        // Destructuring (short way)
+        var [foodname, price, color, had] = food;
+        console.log(foodname);
+        // Output: idly
+
+        console.log(color);
+        // Output: white
+
+        console.log(price);
+        // Output: 40
+
+
+        // ---------------------------------------------------------
+        // OBJECT DESTRUCTURING
+        // ---------------------------------------------------------
+
+        var obj1 = { name: "megha", age: 99, place: "Hyderabad" };
+
+        var { name, age, place } = obj1;
+        console.log(name);
+        // Output: megha
+
+        console.log(age);
+        // Output: 99
+
+        console.log(place);
+        // Output: Hyderabad
+
+
+        // Destructuring with custom variable names
+        var obj1 = { name: "megha", age: 99, place: "Hyderabad" };
+
+        var { name: a, age: b, place: c } = obj1;
+        console.log(a);
+        // Output: megha
+
+        console.log(b);
+        // Output: 99
+
+        console.log(c);
+        // Output: Hyderabad
+
+
+        // ---------------------------------------------------------
+        // TASK → Merge objects using spread operator
+        // ---------------------------------------------------------
+
+        var obj1 = { name: "Mohan", age: 42, place: "India", gender: "Male" };
+        var obj2 = { name1: "chaitu", age1: 40, place1: "India", gender1: "Female" };
+
+        var obj3 = { ...obj1, ...obj2 };  // Merging objects
+        console.log(obj3);
+        // Output:
+        // {
+        //   name: "Mohan",
+        //   age: 42,
+        //   place: "India",
+        //   gender: "Male",
+        //   name1: "chaitu",
+        //   age1: 40,
+        //   place1: "India",
+        //   gender1: "Female"
+        // }
+
+        // ---------------------------------------------------------
+        // END OF FILE
+        // ---------------------------------------------------------
+
+    </script>
+
+</body>
+
+</html>
