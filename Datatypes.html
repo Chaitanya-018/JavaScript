@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Types in JS</title>
+</head>
+
+<body>
+    <script>
+            /*
+-------------------------------------------------------
+   JavaScript Data Types - Examples
+-------------------------------------------------------
+➡ Primitive Data Types:
+    1. String
+    2. Number
+    3. Boolean
+    4. Undefined
+    5. Null
+    6. Symbol
+    7. BigInt
+
+➡ Reference (Non-Primitive) Data Types:
+    1. Object
+    2. Array
+    3. Function
+-------------------------------------------------------
+*/
+
+// ✅ STRING
+let name = "Chaitanya";
+console.log("String:", name, "| Type:", typeof name);
+/*
+Output:
+String: Chaitanya | Type: string
+*/
+
+// ✅ NUMBER
+let age = 24;
+let price = 199.99;
+console.log("Number:", age, price, "| Type:", typeof age);
+/*
+Output:
+Number: 24 199.99 | Type: number
+*/
+
+// ✅ BOOLEAN
+let isLoggedIn = true;
+console.log("Boolean:", isLoggedIn, "| Type:", typeof isLoggedIn);
+/*
+Output:
+Boolean: true | Type: boolean
+*/
+
+// ✅ UNDEFINED
+let city;
+console.log("Undefined:", city, "| Type:", typeof city);
+/*
+Output:
+Undefined: undefined | Type: undefined
+*/
+
+// ✅ NULL (Note: typeof null is "object" due to historical bug in JS)
+let car = null;
+console.log("Null:", car, "| Type:", typeof car);
+/*
+Output:
+Null: null | Type: object
+*/
+
+// ✅ SYMBOL
+let id1 = Symbol("123");
+let id2 = Symbol("123");
+console.log("Symbol:", id1 === id2, "| id1:", id1, "| id2:", id2);
+/*
+Output:
+false | id1: Symbol(123) | id2: Symbol(123)
+*/
+
+// ✅ BIGINT
+let bigNum = 123456789012345678901234567890n;
+console.log("BigInt:", bigNum, "| Type:", typeof bigNum);
+/*
+Output:
+BigInt: 123456789012345678901234567890n | Type: bigint
+*/
+
+// ---------------------------------------------------
+// 🔹 NON-PRIMITIVE DATA TYPES (Reference)
+// ---------------------------------------------------
+
+// ✅ OBJECT
+let student = {
+  name: "Chaitanya",
+  age: 22,
+  course: "Full Stack"
+};
+
+        let studentName = "Rahul";     // string
+        let totalMarks = 75;            // number
+        let isPassed = totalMarks > 40; // boolean
+
+
+        document.write("Student Name: " + studentName + "<br>");
+        document.write("Total Marks: " + totalMarks + "<br>");
+        document.write("Passed: " + isPassed + "<br><br>");
+
+        document.write("<strong>Open the Console to see Datatype Quiz results</strong><br>");
+        console.log("Quiz - Guess the Datatype:");
+        console.log(typeof null);        // "object"
+        console.log(typeof NaN);         // "number"
+        console.log(typeof [1, 2, 3]);     // "object"
+        console.log(typeof { a: 1 });       // "object"
+        console.log(typeof (() => { }));  // "function"
+        console.log(typeof typeof 2)   //"string"
+    </script>
+</body>
+
+</html>
