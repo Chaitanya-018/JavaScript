@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+
+<body>
+    <script>
+        // ---------------------------------------------------------
+        // DATE: 24-10-2025
+        // Anonymous Function | Callback | Higher Order Function | IIFE
+        // ---------------------------------------------------------
+
+
+        /* -------------------------------------------------------
+            1. Anonymous Function (function without a name)
+        -------------------------------------------------------- */
+
+        // Example 1
+        var res = function () {
+            console.log("Yes, Jan feeling good");
+        };
+        res();
+        // Output:
+        // Yes, Jan feeling good
+
+
+        // Example 2
+        let player = function () {
+            console.log("Virat Kohli");
+        };
+        player();
+        // Output:
+        // Virat Kohli
+
+
+        // Example 3 – Anonymous function with parameters
+        let employee = function (empId, empName) {
+            console.log("Employee ID : " + empId);
+            console.log("Employee Name : " + empName);
+        };
+        employee(101, "Chaitanya");
+        // Output:
+        // Employee ID : 101
+        // Employee Name : Chaitanya
+
+
+        // Example 4 – Anonymous function returning a value
+        let student = function () {
+            return "Chaitanya";
+        };
+        console.log(student());
+        // Output:
+        // Chaitanya
+
+
+
+        /* -------------------------------------------------------
+            2. Anonymous Arrow Function
+        -------------------------------------------------------- */
+
+        var bonda = (() => {
+            console.log("Mysore Bonda");
+        });
+        bonda();
+        // Output:
+        // Mysore Bonda
+
+
+        let mul = ((a, b) => {
+            return (a * b);
+        });
+        console.log(mul(10, 20));
+        // Output:
+        // 200
+
+
+
+        /* -------------------------------------------------------
+            3. Callback Function
+            - Function passed as argument & executed later
+        -------------------------------------------------------- */
+
+        // Normal callback
+        function greet(name, callback) {
+            console.log("Hello " + name);
+            callback();
+        }
+
+        function sayBye() {
+            console.log("Goodbye!");
+        }
+
+        greet("Chaitanya", sayBye);
+        // Output:
+        // Hello Chaitanya
+        // Goodbye!
+
+
+        // Callback using anonymous arrow function
+        greet("Chaitanya", () => {
+            console.log("How are you?");
+        });
+        // Output:
+        // Hello Chaitanya
+        // How are you?
+
+
+        // Another example
+        function sayHello() {
+            console.log("Hello!");
+        }
+
+        function execute(fn) {
+            fn();  // calling callback function
+        }
+
+        execute(sayHello);
+        // Output:
+        // Hello!
+
+
+
+        /* -------------------------------------------------------
+            4. Higher Order Function (HOF)
+            - Function that accepts another function as argument
+        -------------------------------------------------------- */
+
+        function welcome() {
+            console.log("Welcome!");
+        }
+
+        function higherOrder(callback) {
+            callback();
+        }
+
+        higherOrder(welcome);
+        // Output:
+        // Welcome!
+
+
+        function fun_name(f, name) {
+            f();
+            console.log(name);
+        }
+
+        fun_name(() => {
+            console.log("hello");
+        }, "chaitu");
+        // Output:
+        // hello
+        // chaitu
+
+
+
+        /* -------------------------------------------------------
+            5. IIFE (Immediately Invoked Function Expression)
+            - Runs as soon as defined
+        -------------------------------------------------------- */
+
+        // Arrow function IIFE
+        (() => {
+            console.log("hiii_1");
+        })();
+        // Output:
+        // hiii_1
+
+
+        // Normal function IIFE
+        (function () {
+            console.log("Done");
+        })();
+        // Output:
+        // Done
+
+
+        // ---------------------------------------------------------
+        // END OF FILE
+        // ---------------------------------------------------------
+
+    </script>
+
+</body>
+
+</html>
