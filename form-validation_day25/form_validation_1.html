@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form-Validation</title>
+</head>
+<body onload="buttoncolor()">
+    <form name="myform" onsubmit="return FormValidation()">
+        Name: <input type="text" name="username"><br><br>
+        Password: <input type="password" name="password"><br><br>
+        <input type="submit" value="Login" name="btn">
+        
+    </form>
+    <script>
+        function FormValidation(){
+            var name = document.myform.username.value
+            var password = document.myform.password.value
+
+            if(name == null || name == ""){
+                alert("Username is mandatory")
+                return false;  // stop form submission
+            }
+            else if(password == null || password == ""){
+                alert("Password is not filled")
+                return false; // it will stop the date to submitted to backend
+            }
+            else{
+                alert("LoggedIn Successfully")
+                return true;  // form will submit
+            }
+
+
+        }
+        function buttoncolor(){
+            var btn1 = document.getElementsByName('btn')
+            btn1[0].style.color = "blue" 
+        }
+    </script>
+</body>
+</html>
