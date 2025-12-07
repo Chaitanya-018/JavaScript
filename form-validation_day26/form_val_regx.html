@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form-Validation</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background: white;
+            width: 350px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        form h2 {
+            text-align: center;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 8px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #6a11cb;
+            outline: none;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 12px;
+            margin-top: -5px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .checkbox-area input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: #6a11cb;
+            cursor: pointer;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            width: 48%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            color: white;
+        }
+
+        input[type="submit"] {
+            background: #6a11cb;
+        }
+
+        input[type="reset"] {
+            background: #f05454;
+        }
+
+        input[type="submit"]:hover {
+            background: #4b09a7;
+        }
+
+        input[type="reset"]:hover {
+            background: #d94343;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+
+</head>
+
+<body>
+    <form onsubmit="return FormValidation()">
+        <h2>Student Registration</h2>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name">
+        <span id="name-error" class="error-message"></span>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password">
+        <span id="password-error" class="error-message"></span>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email">
+        <span id="email-error" class="error-message"></span>
+
+        <label for="college">College:</label>
+        <textarea id="college"></textarea>
+        <span id="college-error" class="error-message"></span>
+
+        <label for="course">Course:</label>
+        <select id="course">
+            <option value="">==== Select option ====</option>
+            <option>Java Full Stack</option>
+            <option>Python Full Stack</option>
+            <option>Mern Stack</option>
+            <option>Data Science</option>
+            <option>manual Testing</option>
+            <option>Data Analytics</option>
+            <option>Automation Testing</option>
+        </select>
+        <span id="course-error" class="error-message"></span>
+
+        <div class="checkbox-area">
+            <input type="checkbox" id="agree">
+            <label for="agree">I Agree</label>
+        </div>
+        <span id="checkbox-error" class="error-message"></span>
+
+        <div class="btn-group">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </div>
+
+    </form>
+
+    <script>
+        function FormValidation() {
+            const name = document.getElementById('name').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const college = document.getElementById('college').value.trim();
+            const course = document.getElementById('course').value.trim();
+            const agree = document.getElementById('agree').checked;
+
+            const nameError = document.getElementById('name-error');
+            const passwordError = document.getElementById('password-error');
+            const emailError = document.getElementById('email-error');
+            const collegeError = document.getElementById('college-error');
+            const courseError = document.getElementById('course-error');
+            const checkboxError = document.getElementById('checkbox-error');
+
+            nameError.textContent = "";
+            passwordError.textContent = "";
+            emailError.textContent = "";
+            collegeError.textContent = "";
+            courseError.textContent = "";
+            checkboxError.textContent = "";
+
+            let isValid = true;
+
+            // REGEX patterns
+            const nameRegex = /^[A-Za-z ]{3,}$/;
+            const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d).{6,}$/;
+            const emailRegex = /^[\w.-]+@[\w.-]+\.\w{2,}$/;
+            const collegeRegex = /^[A-Za-z0-9.,() ]{3,}$/;
+
+            // Name
+            if (!nameRegex.test(name)) {
+                nameError.textContent = "Enter valid Name (letters only, min 3 chars)";
+                isValid = false;
+            }
+
+            // Password
+            if (!passwordRegex.test(password)) {
+                passwordError.textContent = "Password must contain letters & numbers (min 6 chars)";
+                isValid = false;
+            }
+
+            // Email
+            if (!emailRegex.test(email)) {
+                emailError.textContent = "Enter valid Email ID";
+                isValid = false;
+            }
+
+            // College
+            if (!collegeRegex.test(college)) {
+                collegeError.textContent = "Enter valid College Name";
+                isValid = false;
+            }
+
+            // Course
+            if (course === "") {
+                courseError.textContent = "Select a course";
+                isValid = false;
+            }
+
+            // Checkbox
+            if (!agree) {
+                checkboxError.textContent = "Please agree to terms and conditions";
+                isValid = false;
+            }
+
+            return isValid;
+        }
+    </script>
+
+
+</body>
+
+</html>
