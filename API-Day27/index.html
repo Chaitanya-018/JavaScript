@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+</head>
+
+<body>
+    <script>
+        //crud operations using api
+        //1. GET Fetch Data
+
+        fetch("https://jsonplaceholder.typicode.com/users")
+            .then(res => res.json())
+            .then(data => console.log(data))
+            .catch(err => console.log("Error :", err));
+
+
+        //2.POST - add new data
+        fetch("https://jsonplaceholder.typicode.com/users", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name: "Chaitu",
+                email: "chaitu@gmail.com",
+                password: "12345"
+            })
+        })
+            .then(res => res.json())
+            .then(data => console.log("Added: ", data));
+
+
+
+
+        fetch("https://jsonplaceholder.typicode.com/users/1", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name: "Chaitu Updated",
+                email: "newemail@gmail.com"
+            })
+        })
+            .then(res => res.json())
+            .then(data => console.log("Updated:", data))
+            .catch(err => console.log(err));
+
+
+
+
+        fetch("https://jsonplaceholder.typicode.com/users/1", {
+            method: "DELETE"
+        })
+            .then(res => {
+                console.log(res.status);
+                console.log("Deleted");
+            })
+            .catch(err => console.log(err));
+
+
+
+
+
+    </script>
+</body>
+
+</html>
