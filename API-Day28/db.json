@@ -1,0 +1,25 @@
+{
+  "students": [
+    {
+      "id": "1",
+      "name": "Lakshman",
+      "email": "lakshman@gmail.com",
+      "age": 19,
+      "height": "5.4ft"
+    },
+    {
+      "id": "2",
+      "name": "chaitu",
+      "email": "chaitu123@gmail.com",
+      "age": 20,
+      "height": "5.1ft"
+    },
+    {
+      "id": "4",
+      "name": "jay",
+      "email": "jay@gmail.com",
+      "age": 20,
+      "height": "5.5ft"
+    }
+  ]
+}
